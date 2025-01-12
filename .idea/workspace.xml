@@ -4,37 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9bc1918-abff-4525-875a-7c44e756d103" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/geometrydust.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/freebird_music.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/freebird_music80.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/simhei.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freebutton.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freecircle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freeframe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freegamelogic/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freegamelogic/demo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freegamelogic/freebasicobject.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freegamelogic/freemap.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freegamelogic/freeobject.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freegamelogic/freestate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freeicon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freeparticle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freepygamelib.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freetext.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freetools/freecomposer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freetools/freepoet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/freepygame/freetransformation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="a9bc1918-abff-4525-875a-7c44e756d103" name="更改" comment="everything beginning">
+      <change afterPath="$PROJECT_DIR$/assets/geometrydust.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icon/icon_main_title.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icon/icon_play_title.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/freebird_music.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/freebird_music80.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +31,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2ofB0gK5wPdf0n5Q2vPW1Hm1tgk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -62,14 +42,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Dev/fly/freebPCcontrol&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="geometrydust" />
@@ -110,6 +93,15 @@
       <option name="presentableId" value="Default" />
       <updated>1731250527474</updated>
     </task>
+    <task id="LOCAL-00001" summary="everything beginning">
+      <option name="closed" value="true" />
+      <created>1731253369365</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731253369366</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -125,5 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="everything beginning" />
+    <option name="LAST_COMMIT_MESSAGE" value="everything beginning" />
   </component>
 </project>
