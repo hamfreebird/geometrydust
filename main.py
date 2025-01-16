@@ -37,20 +37,51 @@ text_h = freetext.SuperText(screen, [1300, 990], "<h>", "assets\\simhei.ttf", si
                                 color=THECOLORS.get("grey60"))
 text_k = freetext.SuperText(screen, [1550, 990], "<k>", "assets\\simhei.ttf", size=15,
                                 color=THECOLORS.get("grey60"))
-text = [text_main_title, text_play_title, text_s, text_f, text_h, text_k]
+text_note = freetext.SuperText(screen, [100, 800], "note", "assets\\simhei.ttf", size=20,
+                                color=THECOLORS.get("grey80"))
+text_score = freetext.SuperText(screen, [100, 850], "score", "assets\\simhei.ttf", size=20,
+                                color=THECOLORS.get("grey80"))
+text_fall = freetext.SuperText(screen, [100, 900], "fall", "assets\\simhei.ttf", size=20,
+                                color=THECOLORS.get("grey80"))
+text = [text_main_title, text_play_title, text_s, text_f, text_h, text_k, text_note, text_score, text_fall]
 
 button_exit = freebutton.FreeButton(screen, [display_size[0] - 40, 0], [40, 20],
                                 "EXIT", "assets\\simhei.ttf", size=10, border_color=THECOLORS.get("grey50"),
                                 draw_border=True, msg_tran=True)
 button = [button_exit]
 
+spectroscopy_name, spectroscopy = music.read_spectroscopy("spectroscopy\\spectroscopy_test.txt")
+spectroscopy = music.Spectroscopy(screen, spectroscopy_name, spectroscopy)
+key_s = False
+key_f = False
+key_h = False
+key_k = False
+note_number = 0
+score_number = 0
+fall_number = 0
+begin_time = time.time_ns()
+all_frame = 0
+last_frame = 0
+play_frame = 0
+stop_frame = 0
+
 play = False
 
 while True:
+    now_time = time.time_ns()
+    all_frame = music.get_decision_frame(begin_time, now_time, 12)
+    last_frame = play_frame
+    if play is False:
+        stop_frame = all_frame - play_frame
+    else:
+        play_frame = all_frame - stop_frame
     event_text.set_msg("现在时间：" + str(time.localtime().tm_year) + "年 " + str(time.localtime().tm_mon) + "月 " +
                        str(time.localtime().tm_mday) + "日 " + str(time.localtime().tm_hour) + "时 " +
                        str(time.localtime().tm_min) + "分 " + str(time.localtime().tm_sec) + "秒   " +
-                       "当前帧速率 " + str(int(clock.get_fps())) + "     Copyright (c) 2024 freebird")
+                       "当前帧速率 " + str(int(clock.get_fps())) + "     Copyright (c) 2024 freebird" +
+                       "      time_ns  " + str(now_time) + "   all_frame  " + str(all_frame) + "   stop_frame  " +
+                       str(stop_frame) + "   play_frame  " + str(play_frame) + "   last_frame  " + str(last_frame) +
+                       "  " + str(key_s) + "  " + str(key_f) + "  " + str(key_h) + "  " + str(key_k))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -59,12 +90,16 @@ while True:
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_s:
                 text_s.set_msg("---")
+                key_s = True
             elif event.key == pygame.K_f:
                 text_f.set_msg("---")
+                key_f = True
             elif event.key == pygame.K_h:
                 text_h.set_msg("---")
+                key_h = True
             elif event.key == pygame.K_k:
                 text_k.set_msg("---")
+                key_k = True
             elif event.key == pygame.K_SPACE:
                 icon_main_title.set_index(1)
                 if play is False:
@@ -78,12 +113,16 @@ while True:
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_s:
                 text_s.set_msg("<s>")
+                key_s = False
             elif event.key == pygame.K_f:
                 text_f.set_msg("<f>")
+                key_f = False
             elif event.key == pygame.K_h:
                 text_h.set_msg("<h>")
+                key_h = False
             elif event.key == pygame.K_k:
                 text_k.set_msg("<k>")
+                key_k = False
         elif freebutton.position_button_class(button_exit, pygame.mouse.get_pos()) is True:
             button_exit.set_msg_color(THECOLORS.get("grey95"))
             button_exit.check_button = True
@@ -125,7 +164,18 @@ while True:
         unit.draw()
     for unit in text:
         unit.draw()
+    get_note = spectroscopy.check_one(key_s, key_f, key_h, key_k, 1)
+    for index, note in enumerate(get_note):
+        if note[3] == 1:
+            score_number += 1
+        if note[3] == -1:
+            fall_number += 1
+    note_number = score_number + fall_number
+    spectroscopy.draw(play_frame, last_frame, 1, play)
 
+    text_note.set_msg("note   " + str(note_number))
+    text_score.set_msg("score  " + str(score_number))
+    text_fall.set_msg("fall   " + str(fall_number))
     pygame.draw.aaline(screen, THECOLORS.get("grey50"), [0, 20], [1920, 20], 1)
     pygame.draw.aaline(screen, THECOLORS.get("grey70"), [548, 50], [548, 1030], 1)
     pygame.draw.aaline(screen, THECOLORS.get("grey70"), [552, 50], [552, 1030], 1)
@@ -135,3 +185,9 @@ while True:
     pygame.display.flip()
     screen.fill(THECOLORS.get("grey0"))
     clock.tick(frame_number)
+
+    key_s = False
+    key_f = False
+    key_h = False
+    key_k = False
+
